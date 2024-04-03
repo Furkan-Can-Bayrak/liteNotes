@@ -2,7 +2,6 @@
 
 @section('content')
 
-    <button class="btn btn-success"> Not oluştur</button>
-
+    <a class="btn btn-success" href="{{route('createNote')}}"> Not oluştur </a>
 
 @endsection
