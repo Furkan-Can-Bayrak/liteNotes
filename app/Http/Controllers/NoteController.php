@@ -19,12 +19,22 @@ class NoteController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate(
+            [
+                'title' => 'required | min:13 | max:20',
+                'content' => 'required',
+
+            ]
+        );
+
+
 
         $note =new Note();
         $note->title =$request->title;
         $note->content = $request->content;
-        //users tablosundan dinamik veri çekilip selectbox ile user_id alınacak
-        //$note->save();
+        $note->save();
+
+        return redirect()->back()->with('success', 'Başarıyla Kaydedildi');
     }
 
 }

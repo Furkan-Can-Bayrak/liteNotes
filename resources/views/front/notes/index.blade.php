@@ -4,5 +4,5 @@
 
     <button class="btn btn-success"> Not oluştur</button>
 
-    
+
 @endsection
