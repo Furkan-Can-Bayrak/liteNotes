@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Note;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class NoteController extends Controller
 {
@@ -30,6 +31,7 @@ class NoteController extends Controller
 
 
         $note =new Note();
+        $note->user_id = Auth::user()->id;
         $note->title =$request->title;
         $note->content = $request->content;
         $note->save();
