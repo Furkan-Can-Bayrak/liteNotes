@@ -11,7 +11,7 @@
 
 
 
-    @if($notlar->count() > 0)
+    @if($notes->count() > 0)
         @foreach($notes as $note)
             <div class="card mt-3">
                 <div class="card-header">
@@ -22,10 +22,10 @@
                 </div>
             </div>
 
-            @else
-                Kayıtlı Not Bulunmamaktadır
-        @endforeach
 
+        @endforeach
+    @else
+        Kayıtlı Not Bulunmamaktadır
 
     @endif
 
