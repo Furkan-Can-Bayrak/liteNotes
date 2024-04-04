@@ -9,13 +9,6 @@ Route::get('/', function () {
 
 
 
-////       NOTE ROUTELARI
-
-    Route::get('/notes',[NoteController::class,'index'])->name('indexNote');
-
-    Route::get('/notes/create',[NoteController::class,'create'])->name('createNote');
-
-    Route::post('/notes/store',[NoteController::class, 'store'])->name('storeNote');
 
 
     ////    TEST ROUTE      ////
@@ -33,4 +26,12 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    ////       NOTE ROUTELARI
+
+    Route::get('/notes',[NoteController::class,'index'])->name('indexNote');
+
+    Route::get('/notes/create',[NoteController::class,'create'])->name('createNote');
+
+    Route::post('/notes/store',[NoteController::class, 'store'])->name('storeNote');
 });
