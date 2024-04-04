@@ -6,7 +6,7 @@
     <title>LiteNotes</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
-<body class="bg-secondary">
+<body style="background-color:#e2e2e2;">
 
 <nav class="navbar bg-dark navbar-expand-lg bg-body-tertiary px-5 " data-bs-theme="dark">
     <div class="container-fluid">
