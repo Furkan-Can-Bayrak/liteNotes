@@ -10,9 +10,7 @@ class NoteController extends Controller
 {
     public function index()
     {
-        $user =Auth::user();
-
-        $notes =Note::where('user_id',$user->id)->get();
+        $notes =Auth::user()->getNotes;
 
         return view('front.notes.index',compact('notes'));
     }

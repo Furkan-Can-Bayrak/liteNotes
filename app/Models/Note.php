@@ -17,4 +17,12 @@ class Note extends Model
         'content'
     ];
 
+
+    public function getUser()
+    {
+        return $this->belongsTo(User::class,'user_id','id');
+    }
+
+
+
 }
