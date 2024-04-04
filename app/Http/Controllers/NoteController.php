@@ -10,7 +10,11 @@ class NoteController extends Controller
 {
     public function index()
     {
-        return view('front.notes.index');
+        $user =Auth::user();
+
+        $notes =Note::where('user_id',$user->id)->get();
+
+        return view('front.notes.index',compact('notes'));
     }
 
     public function create()
@@ -22,7 +26,7 @@ class NoteController extends Controller
     {
         $request->validate(
             [
-                'title' => 'required | min:13 | max:20',
+                'title' => 'required | min:4 | max:20',
                 'content' => 'required',
 
             ]
