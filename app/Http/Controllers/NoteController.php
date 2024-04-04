@@ -10,9 +10,7 @@ class NoteController extends Controller
 {
     public function index()
     {
-        $loggedInName = Auth::user()->name;
-
-        return view('front.notes.index',compact('loggedInName'));
+        return view('front.notes.index');
     }
 
     public function create()
