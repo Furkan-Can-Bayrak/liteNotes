@@ -29,8 +29,8 @@ class NoteController extends Controller
 
             ],[
                 'title.required' => 'Başlık alanı boş olamaz',
-                'title.min' => 'Başlığı 4 karakterden kısa olamaz',
-                'content.min' => 'İçerik 12 karakter olmalıdır'
+                'title.min' => 'Başlık 4 karakterden kısa olamaz',
+                'content.min' => 'İçerik 12 karakterden uzun olmalıdır'
             ]
         );
 
@@ -48,7 +48,12 @@ class NoteController extends Controller
 
     public function show($id)
     {
-        $note = Note::find($id);
+        $note = Note::findorFail($id);
+
+        if ($note->user_id != Auth::user()->id){
+            return redirect()->back();
+        }
+
         return view('front.notes.show',compact('note'));
     }
 
