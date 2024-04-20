@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Note;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class NoteController extends Controller
 {
@@ -40,15 +41,16 @@ class NoteController extends Controller
         $note->user_id = Auth::user()->id;
         $note->title =$request->title;
         $note->content = $request->content;
+        $note->uuid = Str::uuid();
         $note->save();
 
         return redirect()->back()->with('success', 'Başarıyla Kaydedildi');
     }
 
 
-    public function show($id)
+    public function show($uuid)
     {
-        $note = Note::findorFail($id);
+        $note = Note::where('uuid',$uuid)->first();
 
         if ($note->user_id != Auth::user()->id){
             return redirect()->back();
