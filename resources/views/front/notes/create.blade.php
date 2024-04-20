@@ -30,7 +30,7 @@
             <textarea class="form-control" name="content" id="content" rows="3"></textarea>
         </div>
 
-        <button type="submit" class="btn btn-primary">Gönder</button>
+        <button type="submit" class="btn btn-primary mt-2">Gönder</button>
     </form>
 
 
