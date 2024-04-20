@@ -25,8 +25,12 @@ class NoteController extends Controller
         $request->validate(
             [
                 'title' => 'required | min:4 | max:20',
-                'content' => 'required',
+                'content' => 'required | min:12',
 
+            ],[
+                'title.required' => 'Başlık alanı boş olamaz',
+                'title.min' => 'Başlığı 4 karakterden kısa olamaz',
+                'content.min' => 'İçerik 12 karakter olmalıdır'
             ]
         );
 
