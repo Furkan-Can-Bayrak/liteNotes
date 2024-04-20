@@ -10,14 +10,6 @@ Route::get('/', function () {
 
 
 
-
-    ////    TEST ROUTE      ////
-Route::get('/masterTest', function (){
-    return view('front.layouts.master');
-});
-    ////    TEST ROUTE      ////
-
-
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
