@@ -7,7 +7,7 @@
     <div class="d-flex justify-content-between align-items-center">
         <h1>Detay Sayfası</h1>
 
-        <button class="btn btn-primary">Güncelle</button>
+        <a href="{{route('updateNote',$note->id)}}" class="btn btn-primary">Güncelle</a>
     </div>
 
     <br>

@@ -28,4 +28,10 @@ Route::middleware([
     Route::post('/notes/store',[NoteController::class, 'store'])->name('storeNote');
 
     Route::get('/notes/show/{id}',[NoteController::class,'show'])->name('showNote');
+
+    Route::get('/notes/update/{id}',[NoteController::class,'update'])->name('updateNote');
+
+    Route::post('/notes/update/edit/{id}',[NoteController::class,'edit'])->name('editNote');
+    Route::post('/notes/update/edit',[NoteController::class,'editNoParameter'])->name('editNoteNoParameter');
+
 });

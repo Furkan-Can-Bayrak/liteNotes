@@ -48,4 +48,45 @@ class NoteController extends Controller
         return view('front.notes.show',compact('note'));
     }
 
+    public function update($id)
+    {
+        $note = Note::find($id);
+        return view('front.notes.updateNoParam',compact('note'));
+    }
+
+    public function edit(Request $request,$id)
+    {
+
+        $request->validate([
+            'title' => 'required',
+            'content' => 'min:10'
+        ]);
+
+        $note = Note::find($id);
+
+        $note->title = $request->title;
+        $note->content = $request->content;
+        $note->save();
+
+        return redirect()->route('indexNote')->with('success','Güncelleme işlemi başarılı');
+
+    }
+    public function editNoParameter(Request $request)
+    {
+
+        $request->validate([
+            'title' => 'required',
+            'content' => 'min:10',
+            'note_id' => 'required'
+        ]);
+
+        $note =Note::find($request->note_id);
+
+        $note->title = $request->title;
+        $note->content = $request->content;
+        $note->save();
+
+        return redirect()->route('indexNote')->with('success','Güncelleme işlemi başarılı');
+    }
+
 }
