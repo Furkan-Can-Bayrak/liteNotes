@@ -41,4 +41,11 @@ class NoteController extends Controller
         return redirect()->back()->with('success', 'Başarıyla Kaydedildi');
     }
 
+
+    public function show($id)
+    {
+        $note = Note::find($id);
+        return view('front.notes.show',compact('note'));
+    }
+
 }
