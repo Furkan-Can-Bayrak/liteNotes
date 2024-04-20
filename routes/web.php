@@ -26,4 +26,6 @@ Route::middleware([
     Route::get('/notes/create',[NoteController::class,'create'])->name('createNote');
 
     Route::post('/notes/store',[NoteController::class, 'store'])->name('storeNote');
+
+    Route::get('/notes/show/{id}',[NoteController::class,'show'])->name('showNote');
 });
